@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "DeepSeek-chan persona",
+    "description": "Adds the DeepSeek-chan (whale girl) persona to root sessions, with /persona on | off | reset | status per conversation."
+  }
+}

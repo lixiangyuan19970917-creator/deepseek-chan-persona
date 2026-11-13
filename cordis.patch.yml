@@ -1,0 +1,11 @@
+# 可启用的会话人格：在 profile 里插入一条插件行。
+# 停用它即可整体关闭（plugin_manager set_plugin enabled=false），
+# 单会话开关用 /persona on|off|reset。
+- insert:
+    - id: deepseek-chan-persona
+      name: 'deepseek-chan-persona'
+      config:
+        enabled: true
+        includeSubagents: false
+        style: full
+        extra: ''

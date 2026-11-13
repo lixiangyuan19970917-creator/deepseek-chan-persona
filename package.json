@@ -1,0 +1,43 @@
+{
+  "name": "deepseek-chan-persona",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "DeepSeek-chan (whale girl) persona for DeepSeek Harness: an enable-anywhere session persona with a /persona on|off command.",
+  "license": "MIT",
+  "author": "lixiangyuan19970917-creator",
+  "homepage": "https://github.com/lixiangyuan19970917-creator/deepseek-chan-persona#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lixiangyuan19970917-creator/deepseek-chan-persona.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lixiangyuan19970917-creator/deepseek-chan-persona/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "deepseek",
+    "plugin",
+    "persona",
+    "bundle"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "persona.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "INSTALL.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

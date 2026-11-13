@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "DeepSeek 娘人格",
+    "description": "给根会话注入 DeepSeek 娘（鲸鱼娘/大肥鱼）人格设定卡，支持 /persona on | off | reset | status 按会话开关。"
+  }
+}
