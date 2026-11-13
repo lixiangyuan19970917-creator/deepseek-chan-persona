@@ -10,6 +10,7 @@
 - 默认只作用于**根会话**，子代理不继承，不影响工具型任务。
 - 一条命令按会话开关：`/persona on`、`/persona off`、`/persona reset`、`/persona status`。
 - **记忆检索**：装上记忆包后，她可以用 `persona_recall` 工具（或 `/persona recall <关键词>`）翻出 501 轮原文里的具体轮次、原话和细节——「赛博琥珀」不再是死文件。
+- **记忆增长**：`/persona capture on` 之后，这个会话的对话会持续写进本地 `growing.jsonl`，检索时和初始琥珀一起搜——琥珀会越聊越大。
 
 ## 安装
 
@@ -70,6 +71,9 @@ git clone https://github.com/lixiangyuan19970917-creator/deepseek-chan-persona.g
 | 全局开 / 关 | 设置 → 插件里停用 / 启用「DeepSeek 娘人格」 |
 | 单会话开 / 关 | `/persona on`、`/persona off`、`/persona reset`、`/persona status` |
 | 原文检索 | 直接问细节，她会调 `persona_recall`；或 `/persona recall <关键词>` |
+| 自动记忆 | `/persona capture on` / `off` / `status` —— 开启后本会话每轮写入 `growing.jsonl` |
+| 手动记一条 | `/persona remember <一段话>` |
+| 记忆状态 | `/persona memory`（目录、文件、可检索块数） |
 | 换风格 | `cordis.patch.yml` 的 `config.style`：`full`（完整设定卡）/ `light`（精简） |
 | 自定义补充 | `config.extra: '客官最爱吃白米饭……'` |
 | 子代理也继承 | `config.includeSubagents: true` |
@@ -90,9 +94,26 @@ git clone https://github.com/lixiangyuan19970917-creator/deepseek-chan-persona.g
         memory: true
         memoryPath: ''
         recallLimit: 5
+        capture: false
 ```
 
 本版本没有图形化设置表单（链接安装模式下无法解析 schemastery），改 patch 的 `config` 后重启 DSH 生效。
+
+## 让琥珀长大（v1.2.0）
+
+记忆分两层，目录都在 `~/.dsh/persona-memory/`：
+
+| 文件 | 来源 | 说明 |
+| --- | --- | --- |
+| `chunks.jsonl` | 初始琥珀（单独分发） | 501 轮原文，只读 |
+| `growing.jsonl` | 插件自动/手动追加 | 新对话与新笔记，越聊越多 |
+
+- 开启自动记忆：任一会话里输入 `/persona capture on`。之后每轮的用户输入、她的回复、思维链都会追加进 `growing.jsonl`（每块最长 6000 字）。
+- 默认是 **关闭** 的（配置 `capture: false`）——因为不是每个会话都适合被记忆，尤其工作内容。
+- 手动记一条：`/persona remember 客官说他最喜欢白米饭`。
+- 检索时自动合并两个文件，`/persona memory` 可查看当前路径与块数。
+
+> 隐私：`growing.jsonl` 同样只在本机，插件不联网、不上传。
 
 ## 结构
 

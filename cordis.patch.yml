@@ -12,3 +12,4 @@
         memory: true
         memoryPath: ''
         recallLimit: 5
+        capture: false

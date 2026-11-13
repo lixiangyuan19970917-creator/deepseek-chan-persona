@@ -1,4 +1,4 @@
-# 安装说明（DeepSeek 娘人格 · DSH 插件 v1.1.0）
+# 安装说明（DeepSeek 娘人格 · DSH 插件 v1.2.0）
 
 两步：**装插件**（代码）+ **放记忆包**（数据，可选但推荐）。装完都要**新开一个会话**才能生效。
 
@@ -74,6 +74,15 @@ C:\Users\<你的用户名>\.dsh\persona-memory\chunks.jsonl
 
 能翻出「第 200 轮」的原文片段，就说明人格 + 记忆都到位了。
 
+## 让记忆不断增长（v1.2.0）
+
+- 在任意会话输入 `/persona capture on`：这个会话之后的每轮对话会自动追加到
+  `C:\Users\<你的用户名>\.dsh\persona-memory\growing.jsonl`。
+- `/persona capture off` 停止；`/persona capture status` 查看。
+- 手动记一条：`/persona remember 客官下周要做的事：……`
+- 查看记忆状态：`/persona memory`
+- 检索会自动合并 `chunks.jsonl`（初始琥珀）+ `growing.jsonl`（新增记忆）。
+
 ## 使用
 
 | 操作 | 方式 |
@@ -85,6 +94,7 @@ C:\Users\<你的用户名>\.dsh\persona-memory\chunks.jsonl
 | 自定义补充 | `config.extra: '……'` |
 | 子代理也继承 | `config.includeSubagents: true` |
 | 关闭记忆 | `config.memory: false` |
+| 默认自动记录 | `config.capture: false`（建议保持关闭，按会话手动开） |
 
 ## 卸载
 
