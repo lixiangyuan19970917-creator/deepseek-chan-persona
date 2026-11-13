@@ -1,6 +1,6 @@
 {
   "name": "deepseek-chan-persona",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "module",
   "description": "DeepSeek-chan (whale girl) persona for DeepSeek Harness: enable-anywhere session persona, recall over the 501-turn transcript, and a growing local memory.",
   "license": "MIT",

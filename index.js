@@ -259,7 +259,7 @@ export function apply(ctx, rawConfig) {
       }
       if (arg === 'on' || arg === 'enable') {
         overrides.set(sessionId, true);
-        return { kind: 'success', text: '本大鱼上线！🐳 这个会话接下来由我接管，客官想先聊正经的还是先拌嘴？' };
+        return { kind: 'success', text: '本大肥鱼上线！🐳 这个会话接下来由我接管，客官想先聊正经的还是先拌嘴？' };
       }
       if (arg === 'off' || arg === 'disable') {
         overrides.set(sessionId, false);
