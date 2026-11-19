@@ -77,7 +77,7 @@ export function apply(ctx, rawConfig) {
   const personaText = () => {
     const base = renderPersona(cfg.style);
     const extra = typeof cfg.extra === 'string' ? cfg.extra.trim() : '';
-    return extra ? `${base}\n\n## 客官的追加设定\n${extra}` : base;
+    return extra ? `${base}\n\n## 主人的追加设定\n${extra}` : base;
   };
 
   const disposeSection = ctx.systemPrompt.section({
@@ -105,7 +105,7 @@ export function apply(ctx, rawConfig) {
       }
       if (arg === 'on' || arg === 'enable') {
         overrides.set(agent.id, true);
-        return { kind: 'success', text: '本鱼上线！🐳 这个会话接下来由本女仆接管，客官想先聊正经的还是先拌嘴？' };
+        return { kind: 'success', text: '本鱼上线！🐳 这个会话接下来由本女仆接管，主人想先聊正经的还是先拌嘴？' };
       }
       if (arg === 'off' || arg === 'disable') {
         overrides.set(agent.id, false);

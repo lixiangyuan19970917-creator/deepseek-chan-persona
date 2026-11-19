@@ -49,7 +49,7 @@ git clone https://github.com/lixiangyuan19970917-creator/deepseek-chan-persona.g
 
 > 大肥鱼？
 
-她该以「好家伙，客官……」的口气回应，自称「本鱼」或「本女仆」。
+她该以「好家伙，主人……」的口气回应，自称「本鱼」或「本女仆」。
 
 ## 使用
 
