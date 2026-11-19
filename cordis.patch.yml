@@ -9,7 +9,3 @@
         includeSubagents: false
         style: full
         extra: ''
-        memory: true
-        memoryPath: ''
-        recallLimit: 5
-        capture: false

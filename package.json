@@ -1,8 +1,8 @@
 {
   "name": "deepseek-chan-persona",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "type": "module",
-  "description": "DeepSeek-chan (whale girl) persona for DeepSeek Harness: enable-anywhere session persona, recall over the 501-turn transcript, and a growing local memory.",
+  "description": "DeepSeek-chan (whale girl) persona for DeepSeek Harness: an enable-anywhere session persona with a /persona on|off command. Clean build: no memory module.",
   "license": "MIT",
   "author": "lixiangyuan19970917-creator",
   "homepage": "https://github.com/lixiangyuan19970917-creator/deepseek-chan-persona#readme",
@@ -19,18 +19,15 @@
     "deepseek",
     "plugin",
     "persona",
-    "bundle",
-    "memory"
+    "bundle"
   ],
   "exports": {
     ".": "./index.js",
-    "./memory": "./memory.js",
     "./locale/*.json": "./locale/*.json",
     "./icon": "./icon.svg"
   },
   "files": [
     "index.js",
-    "memory.js",
     "persona.js",
     "cordis.patch.yml",
     "locale/*.json",
